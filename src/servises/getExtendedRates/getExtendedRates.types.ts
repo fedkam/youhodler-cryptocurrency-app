@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const RateSchema = z.object({
   rate: z.number(),
@@ -8,5 +8,6 @@ export const RateSchema = z.object({
 });
 
 export const CurrencySchema = z.record(z.string(), RateSchema);
+export type CurrencyType = z.infer<typeof CurrencySchema>;
 
 export const RatesSchema = z.record(z.string(), CurrencySchema);
