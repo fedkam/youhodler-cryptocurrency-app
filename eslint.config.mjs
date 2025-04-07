@@ -11,6 +11,20 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    name: "custom-rules",
+    files: ["*.ts", "*.tsx"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          name: "classnames",
+          importNames: ["default"],
+          message: "Используй `import cn from 'classnames';`",
+        },
+      ],
+    },
+  },
   ...pluginQuery.configs['flat/recommended'],
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];

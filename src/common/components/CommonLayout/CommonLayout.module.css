@@ -1,0 +1,30 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  --header-height: 60px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  height: var(--header-height);
+  padding: 24px;
+  background: #7d7d7d;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  margin-top: var(--header-height);
+}
+
+.footer {
+  height: 32px;
+  padding: 24px;
+  background: #f0b5b5;
+}

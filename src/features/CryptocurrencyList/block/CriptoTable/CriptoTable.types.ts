@@ -1,3 +1,4 @@
+import { WithClassName } from "@/src/common/types/WithClassName";
 import { ColDef } from "ag-grid-community";
 
 export interface CriptoTableRow {
@@ -8,7 +9,7 @@ export interface CriptoTableRow {
 
 export type CriptoTableCol = ColDef<CriptoTableRow>;
 
-export type CriptoTableProps = {
+export type CriptoTableProps = WithClassName<{
   rows: CriptoTableRow[];
   cols: CriptoTableCol[];
-};
+}>;

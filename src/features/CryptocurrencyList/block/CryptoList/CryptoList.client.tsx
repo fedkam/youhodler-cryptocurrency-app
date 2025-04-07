@@ -3,11 +3,14 @@
 import { useExtendedRatesSuspenseQuery } from "@/src/queries/useExtendedRatesSuspenseQuery/useExtendedRatesSuspenseQuery";
 import { CriptoTable } from "../CriptoTable/CriptoTable.client";
 import { usePrepareCriptoTableRowsAndCols } from "./hooks/usePrepareCriptoTableRowsAndCols";
+import styles from "./CryptoList.module.css";
+import { WithClassName } from "@/src/common/types/WithClassName";
+import cn from "classnames";
 
-// Слой данных, аналитики итд
+//NOTE: Слой для запроса данных, работы с аналитикой итд
 
 /** Список криптовалют */
-export function CryptoList() {
+export function CryptoList({ className }: WithClassName) {
   const { data } = useExtendedRatesSuspenseQuery();
   const selectedCurrencyData = data["usd"];
 
@@ -15,5 +18,13 @@ export function CryptoList() {
     data: selectedCurrencyData,
   });
 
-  return <CriptoTable rows={rows} cols={cols} />;
+  return (
+    <div className={cn(styles.root, className)}>
+      <CriptoTable
+        rows={rows}
+        cols={cols}
+        className={styles.criptoTableWrapper}
+      />
+    </div>
+  );
 }

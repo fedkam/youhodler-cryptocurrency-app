@@ -14,12 +14,7 @@ export default async function Home() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className={styles.page}>
-        <main>
-          <CryptoList />
-        </main>
-        <footer className={styles.footer}>footer</footer>
-      </div>
+      <CryptoList className={styles.cryptoList} />
     </HydrationBoundary>
   );
 }

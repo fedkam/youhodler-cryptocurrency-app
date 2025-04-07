@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.criptoTableWrapper {
+  width: 592px;
+  height: 80vh;
+}
