@@ -3,21 +3,16 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import styles from "./page.module.css";
 import { getExtendedRatesQueryOptions } from "@/src/queries/useExtendedRatesSuspenseQuery/getExtendedRatesQueryOptions";
-import { CryptoList } from "@/src/features/CryptocurrencyList/block/CryptoList/CryptoList.client";
-import { isBotOnlyServer } from "@/src/common/utils/isBotOnlyServer";
 
-export default async function Home() {
+export default async function CryptocurrencyDetails() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery(getExtendedRatesQueryOptions());
 
-  const isBot = await isBotOnlyServer();
-
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <CryptoList isBot={isBot} className={styles.cryptoList} />
+      <div>123</div>
     </HydrationBoundary>
   );
 }

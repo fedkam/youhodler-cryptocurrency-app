@@ -4,13 +4,14 @@ import { useExtendedRatesSuspenseQuery } from "@/src/queries/useExtendedRatesSus
 import { CriptoTable } from "../CriptoTable/CriptoTable.client";
 import { usePrepareCriptoTableRowsAndCols } from "./hooks/usePrepareCriptoTableRowsAndCols";
 import styles from "./CryptoList.module.css";
-import { WithClassName } from "@/src/common/types/WithClassName";
 import cn from "classnames";
+import { SeoCriptoTable } from "../SeoCriptoTable/SeoCriptoTable.client";
+import { CryptoListProps } from "./CryptoList.types";
 
 //NOTE: Слой для запроса данных, работы с аналитикой итд
 
 /** Список криптовалют */
-export function CryptoList({ className }: WithClassName) {
+export function CryptoList({ isBot = false, className }: CryptoListProps) {
   const { data } = useExtendedRatesSuspenseQuery();
   const selectedCurrencyData = data["usd"];
 
@@ -20,11 +21,19 @@ export function CryptoList({ className }: WithClassName) {
 
   return (
     <div className={cn(styles.root, className)}>
-      <CriptoTable
-        rows={rows}
-        cols={cols}
-        className={styles.criptoTableWrapper}
-      />
+      {isBot ? (
+        <SeoCriptoTable
+          rows={rows}
+          cols={cols}
+          className={styles.criptoTableWrapper}
+        />
+      ) : (
+        <CriptoTable
+          rows={rows}
+          cols={cols}
+          className={styles.criptoTableWrapper}
+        />
+      )}
     </div>
   );
 }
