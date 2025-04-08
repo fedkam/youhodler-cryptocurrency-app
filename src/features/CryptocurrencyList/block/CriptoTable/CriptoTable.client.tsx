@@ -1,29 +1,31 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { CriptoTableProps, CriptoTableRow } from "./CriptoTable.types";
 import { AgGridReact } from "ag-grid-react";
 import cn from "classnames";
 import {
   AllCommunityModule,
-  colorSchemeDarkBlue,
   ModuleRegistry,
   RowClickedEvent,
-  themeQuartz,
 } from "ag-grid-community";
 import styles from "./CriptoTable.module.css";
 import { useRouter } from "next/navigation";
 import { cryptoDetailsRoute } from "@/src/routes/routes";
 
-// NOTE: Слой таблицы для списка криптовалют
-
 ModuleRegistry.registerModules([AllCommunityModule]);
-const themeDarkBlue = themeQuartz.withPart(colorSchemeDarkBlue);
 
+/** Таблица с криптовалютами */
 export function CriptoTable({ rows, cols, className }: CriptoTableProps) {
   const [rowData] = useState(rows);
   const [colDefs] = useState(cols);
   const router = useRouter();
+
+  const defaultColDef = useMemo(() => {
+    return {
+      resizable: false,
+    };
+  }, []);
 
   const onRowClicked = useCallback(
     (event: RowClickedEvent<CriptoTableRow>) => {
@@ -44,8 +46,8 @@ export function CriptoTable({ rows, cols, className }: CriptoTableProps) {
         rowSelection="single"
         suppressCellFocus={true}
         onRowClicked={onRowClicked}
-        theme={themeDarkBlue}
         rowClass={styles.rowHover}
+        defaultColDef={defaultColDef}
       />
     </div>
   );

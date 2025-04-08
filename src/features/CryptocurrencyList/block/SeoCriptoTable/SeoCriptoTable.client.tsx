@@ -1,14 +1,15 @@
 import { CriptoTableProps } from "../CriptoTable/CriptoTable.types";
 
-// NOTE: Серверная таблица для поддержки SEO
-
+/** Упрощенная таблица с криптовалютами для ботов */
 export function SeoCriptoTable({ rows, cols, className }: CriptoTableProps) {
   return (
-    <table className={className}>
+    <table className={className} aria-label="Cryptocurrency List">
       <thead>
         <tr>
           {cols.map((column) => (
-            <th key={column.field}>{column.headerName}</th>
+            <th key={column.field} scope="col">
+              {column.headerName}
+            </th>
           ))}
         </tr>
       </thead>

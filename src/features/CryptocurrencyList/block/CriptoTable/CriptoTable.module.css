@@ -1,4 +1,9 @@
 .root {
+  --ag-background-color: var(--theme-background-color);
+  --ag-foreground-color: var(--theme-primary-text-color);
+  --ag-spacing: 12px;
+  --ag-browser-color-scheme: dark;
+
   width: 100%;
   height: 100%;
 }

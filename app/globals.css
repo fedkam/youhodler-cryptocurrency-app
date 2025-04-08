@@ -1,18 +1,13 @@
 :root {
-  --background: #fff;
-  --foreground: #171717;
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgb(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgb(var(--gray-rgb), 0.05);
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+  /* Main tokens */
+  --theme-background-color: #19191f;
+  --theme-primary-text-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -23,25 +18,17 @@ body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--theme-primary-text-color);
+  background: var(--theme-background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+h1 {
+  font-size: 48px;
 }
 
 a {
-  color: inherit;
+  color: #0d7dfd;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

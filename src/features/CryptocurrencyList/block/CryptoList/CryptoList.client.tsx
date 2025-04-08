@@ -12,11 +12,10 @@ import { CryptoListProps } from "./CryptoList.types";
 
 /** Список криптовалют */
 export function CryptoList({ isBot = false, className }: CryptoListProps) {
-  const { data } = useExtendedRatesSuspenseQuery();
-  const selectedCurrencyData = data["usd"];
+  const { data } = useExtendedRatesSuspenseQuery({ currency: "usd" });
 
   const { rows, cols } = usePrepareCriptoTableRowsAndCols({
-    data: selectedCurrencyData,
+    data,
   });
 
   return (
