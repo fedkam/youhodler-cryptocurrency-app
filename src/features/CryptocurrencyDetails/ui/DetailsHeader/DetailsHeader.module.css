@@ -1,11 +1,17 @@
 .root {
   display: flex;
   flex-direction: column;
-  gap: var(--theme-gap-24);
+  gap: var(--theme-space-24);
 }
 
 .firstLine {
   display: flex;
-  gap: var(--theme-gap-16);
+  gap: var(--theme-space-16);
   align-items: center;
+}
+
+.subTitle {
+  /* font-family: var(--font-dm-sans); */
+  font-weight: 500;
+  color: var(--theme-secondary-text-color);
 }

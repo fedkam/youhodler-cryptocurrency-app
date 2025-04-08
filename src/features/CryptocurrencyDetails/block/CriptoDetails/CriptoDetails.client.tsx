@@ -1,22 +1,25 @@
 "use client";
 
+import { useExtendedRatesSuspenseQuery } from "@/src/queries/useExtendedRatesSuspenseQuery/useExtendedRatesSuspenseQuery";
 import { DetailsHeader } from "../../ui/DetailsHeader/DetailsHeader.client";
 import styles from "./CriptoDetails.module.css";
 import { useExtraCurrencyDetailsSuspenseQuery } from "@/src/queries/useExtraCurrencyDetailsSuspenseQuery/useExtraCurrencyDetailsSuspenseQuery";
 import { Suspense } from "react";
+import { PriceList } from "../../ui/PriceList/PriceList.client";
 
 export function CriptoDetails({ ticker }: { ticker: string }) {
   const { data: extraCurrencyDetailsData } =
     useExtraCurrencyDetailsSuspenseQuery({
       currency: ticker,
     });
-  // const { data } = useExtendedRatesSuspenseQuery({ currency: "usd" });
-
-  console.log("data2", extraCurrencyDetailsData);
+  const { data: extendedRates } = useExtendedRatesSuspenseQuery({
+    currency: "usd",
+  });
+  const { rate, ask, bid, diff24h } = extendedRates[ticker] || {};
 
   return (
     <div className={styles.root}>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<p>Loading... DetailsHeader</p>}>
         <DetailsHeader
           name={ticker}
           fullName={extraCurrencyDetailsData.fullName}
@@ -24,7 +27,9 @@ export function CriptoDetails({ ticker }: { ticker: string }) {
           imageUrl={extraCurrencyDetailsData.imageUrl}
         />
       </Suspense>
-      <p>Details about a specific cryptocurrency will be displayed here.</p>
+      <Suspense fallback={<p>Loading... PriceList</p>}>
+        <PriceList rate={rate} ask={ask} bid={bid} diff24h={diff24h} />
+      </Suspense>
     </div>
   );
 }

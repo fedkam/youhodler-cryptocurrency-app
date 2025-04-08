@@ -1,0 +1,5 @@
+.root {
+  display: flex;
+  gap: var(--theme-space-24);
+  justify-content: space-between;
+}

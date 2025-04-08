@@ -7,6 +7,7 @@ export function useExtendedRatesSuspenseQuery({
   currency = DEFAULT_CURRENCY,
 }: {
   currency: string;
+  currentCoin?: string;
 }) {
   return useSuspenseQuery({
     ...getExtendedRatesQueryOptions(),

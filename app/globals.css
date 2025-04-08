@@ -2,19 +2,20 @@
   /* Основные токены */
   --theme-background-color: #19191f;
   --theme-primary-text-color: #fff;
+  --theme-secondary-text-color: #e0e0e0;
   --theme-side-padding-on-pages: 48px;
   --theme-top-padding-from-header: 40px;
 
   /* Отступы */
-  --theme-gap-8: 8px;
-  --theme-gap-16: 16px;
-  --theme-gap-24: 24px;
-  --theme-gap-32: 32px;
-  --theme-gap-40: 40px;
-  --theme-gap-48: 48px;
-  --theme-gap-128: 128px;
+  --theme-space-8: 8px;
+  --theme-space-16: 16px;
+  --theme-space-24: 24px;
+  --theme-space-32: 32px;
+  --theme-space-40: 40px;
+  --theme-space-48: 48px;
+  --theme-space-128: 128px;
 
-  line-height: 1.5;
+  line-height: 160%;
 }
 
 * {
@@ -30,15 +31,29 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), sans-serif;
   color: var(--theme-primary-text-color);
   background: var(--theme-background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  font-size: 48px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-weight: 700; /* Полужирный */
+}
+
+p,
+a,
+li,
+button {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-weight: 400; /* Обычный */
 }
 
 a {

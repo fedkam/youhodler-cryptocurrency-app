@@ -21,7 +21,7 @@ export function usePrepareCriptoTableRowsAndCols({
 
   const cols: CriptoTableCol[] = [
     { field: "name", headerName: "Name" },
-    { field: "ask", headerName: "Price" },
+    { field: "ask", headerName: "Price" }, // ИСПРАВИТЬ!!!!!!!!!!!!!!!!!!!!!!!!
     { field: "diff24h", headerName: "Change 24h" },
   ];
 

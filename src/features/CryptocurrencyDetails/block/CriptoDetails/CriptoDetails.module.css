@@ -1,4 +1,5 @@
 .root {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
+  gap: var(--theme-space-40);
 }

@@ -25,7 +25,7 @@
 
 .main {
   flex: 1;
-  padding: 0 var(--theme-gap-128);
+  padding: 0 var(--theme-space-128);
   margin-top: var(--common-layout-header-height);
 }
 
@@ -39,5 +39,5 @@
 
 .footerLinks {
   display: flex;
-  gap: var(--theme-gap-16);
+  gap: var(--theme-space-16);
 }

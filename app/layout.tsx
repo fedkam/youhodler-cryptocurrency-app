@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import RootProviders from "./providers";
 import { CommonLayout } from "@/src/common/components/CommonLayout/CommonLayout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
   subsets: ["latin"],
+  variable: "--font-dm-sans",
+  preload: true,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
   subsets: ["latin"],
+  variable: "--font-roboto-mono",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -26,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${dmSans.variable} ${robotoMono.variable}`}>
         <RootProviders>
           <CommonLayout>{children}</CommonLayout>
         </RootProviders>
