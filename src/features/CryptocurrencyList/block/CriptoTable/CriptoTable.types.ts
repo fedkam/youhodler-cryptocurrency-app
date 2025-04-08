@@ -3,7 +3,7 @@ import { ColDef } from "ag-grid-community";
 
 export interface CriptoTableRow {
   name: string;
-  ask: number;
+  rate: number;
   diff24h: number;
 }
 

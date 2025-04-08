@@ -15,13 +15,13 @@ export function usePrepareCriptoTableRowsAndCols({
 } {
   const rows: CriptoTableRow[] = Object.entries(data).map(([key, value]) => ({
     name: key,
-    ask: value.ask,
+    rate: value.rate,
     diff24h: value.diff24h,
   }));
 
   const cols: CriptoTableCol[] = [
     { field: "name", headerName: "Name" },
-    { field: "ask", headerName: "Price" }, // ИСПРАВИТЬ!!!!!!!!!!!!!!!!!!!!!!!!
+    { field: "rate", headerName: "Price" },
     { field: "diff24h", headerName: "Change 24h" },
   ];
 
