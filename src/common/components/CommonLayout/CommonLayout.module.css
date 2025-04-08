@@ -3,8 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
 
-  --header-height: 64px;
-  --common-side-padding: 48px;
+  --common-layout-header-height: 64px;
 }
 
 .header {
@@ -16,8 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-height);
-  padding: 0 var(--common-side-padding);
+  height: var(--common-layout-header-height);
+  padding: 0 var(--theme-side-padding-on-pages);
 }
 
 .userImage {
@@ -26,19 +25,19 @@
 
 .main {
   flex: 1;
-  padding: 0 72px;
-  margin-top: var(--header-height);
+  padding: 0 var(--theme-gap-128);
+  margin-top: var(--common-layout-header-height);
 }
 
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--header-height);
-  padding: 0 var(--common-side-padding);
+  height: var(--common-layout-header-height);
+  padding: 0 var(--theme-side-padding-on-pages);
 }
 
 .footerLinks {
   display: flex;
-  gap: 16px;
+  gap: var(--theme-gap-16);
 }

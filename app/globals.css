@@ -1,7 +1,20 @@
 :root {
-  /* Main tokens */
+  /* Основные токены */
   --theme-background-color: #19191f;
   --theme-primary-text-color: #fff;
+  --theme-side-padding-on-pages: 48px;
+  --theme-top-padding-from-header: 40px;
+
+  /* Отступы */
+  --theme-gap-8: 8px;
+  --theme-gap-16: 16px;
+  --theme-gap-24: 24px;
+  --theme-gap-32: 32px;
+  --theme-gap-40: 40px;
+  --theme-gap-48: 48px;
+  --theme-gap-128: 128px;
+
+  line-height: 1.5;
 }
 
 * {

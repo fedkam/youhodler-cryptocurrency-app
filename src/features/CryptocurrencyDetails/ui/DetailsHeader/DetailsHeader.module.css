@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--theme-gap-24);
+}
+
+.firstLine {
+  display: flex;
+  gap: var(--theme-gap-16);
+  align-items: center;
+}
