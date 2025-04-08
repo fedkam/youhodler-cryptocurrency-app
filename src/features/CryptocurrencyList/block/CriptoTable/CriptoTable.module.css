@@ -4,6 +4,11 @@
   --ag-spacing: 12px;
   --ag-browser-color-scheme: dark;
 
+  /* Общие токены на кастомные ячейки */
+  --criptotable-font-size: 14px;
+  --criptotable-font-family: var(--font-roboto-mono);
+  --criptotable-font-weight: 400;
+
   width: 100%;
   height: 100%;
 }

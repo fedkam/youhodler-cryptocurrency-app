@@ -5,12 +5,16 @@ import {
 } from "../../CriptoTable/CriptoTable.types";
 import { useMemo } from "react";
 import { convertDiff24hToPercentage } from "@/src/common/utils/convertDiff24hToPercentage";
+import { Diff24hCell } from "../../CriptoTable/subComponents/Diff24hCell/Diff24hCell.client";
+import { PriceCell } from "../../CriptoTable/subComponents/PriceCell/PriceCell.client";
 
 /** Хук готовит структуру для отображения в таблице */
 export function usePrepareCriptoTableRowsAndCols({
   data,
+  currentCurrency,
 }: {
   data: CurrencyType;
+  currentCurrency: string;
 }): {
   rows: CriptoTableRow[];
   cols: CriptoTableCol[];
@@ -29,9 +33,16 @@ export function usePrepareCriptoTableRowsAndCols({
   );
 
   const cols: CriptoTableCol[] = [
-    { field: "name", headerName: "Name" },
-    { field: "rate", headerName: "Price" },
-    { field: "diff24h", headerName: "Change 24h" },
+    {
+      field: "name",
+      headerName: "Name",
+    },
+    {
+      field: "rate",
+      headerName: `Price (${currentCurrency.toUpperCase()})`,
+      cellRenderer: PriceCell,
+    },
+    { field: "diff24h", headerName: "Change 24h", cellRenderer: Diff24hCell },
   ];
 
   return {

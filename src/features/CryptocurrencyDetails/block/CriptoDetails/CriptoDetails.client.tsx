@@ -8,6 +8,9 @@ import { Suspense } from "react";
 import { PriceList } from "../../ui/PriceList/PriceList.client";
 import { DetailsDescription } from "../../ui/DetailsDescription/DetailsDescription.client";
 
+//NOTE: Слой для запроса данных, работы с аналитикой итд
+
+/** Информация о криптовалюте */
 export function CriptoDetails({ ticker }: { ticker: string }) {
   const { data: extraCurrencyDetailsData } =
     useExtraCurrencyDetailsSuspenseQuery({

@@ -10,12 +10,15 @@ import { CryptoListProps } from "./CryptoList.types";
 
 //NOTE: Слой для запроса данных, работы с аналитикой итд
 
+const CURRENCY = "usd";
+
 /** Список криптовалют */
 export function CryptoList({ isBot = false, className }: CryptoListProps) {
-  const { data } = useExtendedRatesSuspenseQuery({ currency: "usd" });
+  const { data } = useExtendedRatesSuspenseQuery({ currency: CURRENCY });
 
   const { rows, cols } = usePrepareCriptoTableRowsAndCols({
     data,
+    currentCurrency: CURRENCY,
   });
 
   return (

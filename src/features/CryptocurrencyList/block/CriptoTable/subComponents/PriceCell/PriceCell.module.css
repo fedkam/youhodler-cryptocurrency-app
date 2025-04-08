@@ -1,0 +1,5 @@
+.root {
+  font-family: var(--criptotable-font-family);
+  font-size: var(--criptotable-font-size);
+  font-weight: var(--criptotable-font-weight);
+}
