@@ -6,6 +6,7 @@ import styles from "./CriptoDetails.module.css";
 import { useExtraCurrencyDetailsSuspenseQuery } from "@/src/queries/useExtraCurrencyDetailsSuspenseQuery/useExtraCurrencyDetailsSuspenseQuery";
 import { Suspense } from "react";
 import { PriceList } from "../../ui/PriceList/PriceList.client";
+import { DetailsDescription } from "../../ui/DetailsDescription/DetailsDescription.client";
 
 export function CriptoDetails({ ticker }: { ticker: string }) {
   const { data: extraCurrencyDetailsData } =
@@ -23,9 +24,13 @@ export function CriptoDetails({ ticker }: { ticker: string }) {
         <DetailsHeader
           name={ticker}
           fullName={extraCurrencyDetailsData.fullName}
-          description={extraCurrencyDetailsData.description}
           imageUrl={extraCurrencyDetailsData.imageUrl}
         />
+      </Suspense>
+      <Suspense fallback={<p>Loading... DetailsDescription</p>}>
+        <DetailsDescription>
+          {extraCurrencyDetailsData.description}
+        </DetailsDescription>
       </Suspense>
       <Suspense fallback={<p>Loading... PriceList</p>}>
         <PriceList rate={rate} ask={ask} bid={bid} diff24h={diff24h} />

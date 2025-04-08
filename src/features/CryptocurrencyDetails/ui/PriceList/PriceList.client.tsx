@@ -4,6 +4,7 @@ import { DetailsItemContainer } from "../DetailsItemContainer/DetailsItemContain
 import { PriceListProps } from "./PriceList.types";
 import styles from "./PriceList.module.css";
 import cn from "classnames";
+import { PriceWithCurrency } from "../PriceWithCurrency/PriceWithCurrency.client";
 
 export function PriceList({
   rate,
@@ -15,16 +16,16 @@ export function PriceList({
   return (
     <div className={cn(styles.root, className)}>
       <DetailsItemContainer title="Price">
-        <p>{rate}</p>
+        <PriceWithCurrency price={rate} />
       </DetailsItemContainer>
       <DetailsItemContainer title="Ask">
-        <p>{ask}</p>
+        <PriceWithCurrency price={ask} />
       </DetailsItemContainer>
       <DetailsItemContainer title="Bid">
-        <p>{bid}</p>
+        <PriceWithCurrency price={bid} />
       </DetailsItemContainer>
       <DetailsItemContainer title="Change 24h">
-        <p>{diff24h}</p>
+        <PriceWithCurrency price={diff24h} />
       </DetailsItemContainer>
     </div>
   );

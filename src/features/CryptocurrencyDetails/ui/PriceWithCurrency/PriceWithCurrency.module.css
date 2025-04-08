@@ -1,0 +1,10 @@
+.price {
+  font-family: var(--font-roboto-mono);
+  font-weight: 500;
+}
+
+.currency {
+  margin-left: var(--theme-space-4);
+  font-weight: 600;
+  color: var(--theme-gray-color);
+}

@@ -1,12 +1,18 @@
 :root {
-  /* Основные токены */
+  /* ТОКЕНЫ */
+
+  /* Цвета */
   --theme-background-color: #19191f;
   --theme-primary-text-color: #fff;
   --theme-secondary-text-color: #e0e0e0;
+  --theme-gray-color: #888;
+
+  /* Отступы */
   --theme-side-padding-on-pages: 48px;
   --theme-top-padding-from-header: 40px;
 
-  /* Отступы */
+  /* Шаг */
+  --theme-space-4: 4px;
   --theme-space-8: 8px;
   --theme-space-16: 16px;
   --theme-space-24: 24px;
