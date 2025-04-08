@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: var(--theme-space-4) var(--theme-space-8);
+  font-family: var(--criptotable-font-family);
+  font-size: var(--criptotable-font-size);
+  font-weight: var(--criptotable-font-weight);
+  color: rgb(200 200 200);
+  background-color: rgb(187 187 187 / 2%);
+  border-radius: 8px;
+}
+
+.positive {
+  color: rgb(43 191 129);
+  background-color: rgb(43 191 129 / 5%);
+}
+
+.negative {
+  color: rgb(224 69 90);
+  background-color: rgb(219 47 93 / 5%);
+}

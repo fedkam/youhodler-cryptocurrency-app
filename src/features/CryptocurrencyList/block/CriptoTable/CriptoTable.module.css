@@ -1,4 +1,6 @@
 .root {
+  position: relative;
+
   --ag-background-color: var(--theme-background-color);
   --ag-foreground-color: var(--theme-primary-text-color);
   --ag-spacing: 12px;
@@ -15,4 +17,16 @@
 
 .rowHover {
   cursor: pointer;
+}
+
+.gridContainer {
+  background-color: rgb(255 255 255 / 10.7%);
+  border-radius: 8px;
+  animation: fade-in 0.7s ease-in forwards;
+}
+
+@keyframes fade-in {
+  to {
+    background-color: rgb(255 0 0 / 0%);
+  }
 }

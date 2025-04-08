@@ -17,7 +17,6 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 
 /** Таблица с криптовалютами */
 export function CriptoTable({ rows, cols, className }: CriptoTableProps) {
-  const [rowData] = useState(rows);
   const [colDefs] = useState(cols);
   const router = useRouter();
 
@@ -39,9 +38,9 @@ export function CriptoTable({ rows, cols, className }: CriptoTableProps) {
   );
 
   return (
-    <div className={cn(styles.root, className)}>
+    <div className={cn(styles.root, styles.gridContainer, className)}>
       <AgGridReact
-        rowData={rowData}
+        rowData={rows}
         columnDefs={colDefs}
         rowSelection="single"
         suppressCellFocus={true}

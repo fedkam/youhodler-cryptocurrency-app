@@ -1,11 +1,11 @@
 "use client";
 
 import { CustomCellRendererProps } from "ag-grid-react";
-import styles from "./Diff24hCell.module.css";
+import styles from "./PercentageDifferenceCell.module.css";
 import cn from "classnames";
 
 /** Рост/падение в процентах */
-export function Diff24hCell({ value }: CustomCellRendererProps) {
+export function PercentageDifferenceCell({ value }: CustomCellRendererProps) {
   return (
     <span
       className={cn(styles.root, {

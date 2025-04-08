@@ -5,12 +5,13 @@ import { PriceListProps } from "./PriceList.types";
 import styles from "./PriceList.module.css";
 import cn from "classnames";
 import { PriceWithCurrency } from "../PriceWithCurrency/PriceWithCurrency.client";
+import { PercentageDifference } from "../PercentageDifference/PercentageDifference.client";
 
 export function PriceList({
   rate,
   ask,
   bid,
-  diff24h,
+  diff24hInPercent,
   className,
 }: PriceListProps) {
   return (
@@ -25,7 +26,7 @@ export function PriceList({
         <PriceWithCurrency price={bid} />
       </DetailsItemContainer>
       <DetailsItemContainer title="Change 24h">
-        <PriceWithCurrency price={diff24h} />
+        <PercentageDifference diff={diff24hInPercent} />
       </DetailsItemContainer>
     </div>
   );

@@ -4,5 +4,5 @@ export type PriceListProps = WithClassName<{
   rate: number;
   ask: number;
   bid: number;
-  diff24h: number;
+  diff24hInPercent: number;
 }>;

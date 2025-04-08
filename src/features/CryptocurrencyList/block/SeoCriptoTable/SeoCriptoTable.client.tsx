@@ -1,9 +1,9 @@
 import { CriptoTableProps } from "../CriptoTable/CriptoTable.types";
 
 /** Упрощенная таблица с криптовалютами для ботов */
-export function SeoCriptoTable({ rows, cols, className }: CriptoTableProps) {
+export function SeoCriptoTable({ rows, cols }: CriptoTableProps) {
   return (
-    <table className={className} aria-label="Cryptocurrency List">
+    <table aria-label="Cryptocurrency List">
       <thead>
         <tr>
           {cols.map((column) => (

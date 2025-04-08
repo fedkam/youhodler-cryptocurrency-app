@@ -7,6 +7,7 @@ import styles from "./CryptoList.module.css";
 import cn from "classnames";
 import { SeoCriptoTable } from "../SeoCriptoTable/SeoCriptoTable.client";
 import { CryptoListProps } from "./CryptoList.types";
+import { Suspense } from "react";
 
 //NOTE: Слой для запроса данных, работы с аналитикой итд
 
@@ -24,17 +25,15 @@ export function CryptoList({ isBot = false, className }: CryptoListProps) {
   return (
     <div className={cn(styles.root, className)}>
       {isBot ? (
-        <SeoCriptoTable
-          rows={rows}
-          cols={cols}
-          className={styles.criptoTableWrapper}
-        />
+        <SeoCriptoTable rows={rows} cols={cols} />
       ) : (
-        <CriptoTable
-          rows={rows}
-          cols={cols}
-          className={styles.criptoTableWrapper}
-        />
+        <Suspense fallback={<p>Loading... CriptoTable</p>}>
+          <CriptoTable
+            rows={rows}
+            cols={cols}
+            className={styles.criptoTableWrapper}
+          />
+        </Suspense>
       )}
     </div>
   );

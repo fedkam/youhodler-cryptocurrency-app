@@ -7,6 +7,7 @@ import { useExtraCurrencyDetailsSuspenseQuery } from "@/src/queries/useExtraCurr
 import { Suspense } from "react";
 import { PriceList } from "../../ui/PriceList/PriceList.client";
 import { DetailsDescription } from "../../ui/DetailsDescription/DetailsDescription.client";
+import { convertDiff24hToPercentage } from "@/src/common/utils/convertDiff24hToPercentage";
 
 //NOTE: Слой для запроса данных, работы с аналитикой итд
 
@@ -20,6 +21,7 @@ export function CriptoDetails({ ticker }: { ticker: string }) {
     currency: "usd",
   });
   const { rate, ask, bid, diff24h } = extendedRates[ticker] || {};
+  const diff24hInPercent = convertDiff24hToPercentage({ rate, diff24h });
 
   return (
     <div className={styles.root}>
@@ -36,7 +38,12 @@ export function CriptoDetails({ ticker }: { ticker: string }) {
         </DetailsDescription>
       </Suspense>
       <Suspense fallback={<p>Loading... PriceList</p>}>
-        <PriceList rate={rate} ask={ask} bid={bid} diff24h={diff24h} />
+        <PriceList
+          rate={rate}
+          ask={ask}
+          bid={bid}
+          diff24hInPercent={diff24hInPercent}
+        />
       </Suspense>
     </div>
   );

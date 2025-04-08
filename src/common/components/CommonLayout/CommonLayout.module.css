@@ -17,6 +17,7 @@
   justify-content: space-between;
   height: var(--common-layout-header-height);
   padding: 0 var(--theme-side-padding-on-pages);
+  background-color: var(--theme-background-color);
 }
 
 .userImage {
@@ -35,9 +36,29 @@
   justify-content: space-between;
   height: var(--common-layout-header-height);
   padding: 0 var(--theme-side-padding-on-pages);
+  margin-top: var(--theme-space-32);
 }
 
 .footerLinks {
   display: flex;
   gap: var(--theme-space-16);
+}
+
+@media (width <= 768px) {
+  .main {
+    padding: 0 var(--theme-space-32);
+  }
+
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (width <= 390px) {
+  .footer {
+    font-size: 12px;
+  }
 }

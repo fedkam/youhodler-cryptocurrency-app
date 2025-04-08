@@ -6,6 +6,6 @@
 }
 
 .criptoTableWrapper {
-  width: 592px;
+  max-width: 592px;
   height: 80vh;
 }
