@@ -7,6 +7,7 @@ import { useMemo } from "react";
 import { convertDiff24hToPercentage } from "@/src/common/utils/convertDiff24hToPercentage";
 import { PercentageDifferenceCell } from "../../CriptoTable/subComponents/PercentageDifferenceCell/PercentageDifferenceCell.client";
 import { PriceCell } from "../../CriptoTable/subComponents/PriceCell/PriceCell.client";
+import { NameCell } from "../../CriptoTable/subComponents/NameCell/NameCell.client";
 
 /** Хук готовит структуру для отображения в таблице */
 export function usePrepareCriptoTableRowsAndCols({
@@ -37,6 +38,7 @@ export function usePrepareCriptoTableRowsAndCols({
       field: "name",
       headerName: "Name",
       filter: true,
+      cellRenderer: NameCell,
     },
     {
       field: "rate",

@@ -1,0 +1,14 @@
+.seoLink {
+  /* Стилизуем как обычный текст */
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+
+  /* Отключаем hover-эффекты */
+  &:hover,
+  &:active,
+  &:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+}
