@@ -8,6 +8,7 @@ import { CriptoDetails } from "@/src/features/CryptocurrencyDetails/block/Cripto
 import styles from "./page.module.css";
 import { CryptocurrencyDetailsPageParams } from "./page.types";
 import { getExtraCurrencyDetailsQueryOptions } from "@/src/queries/useExtraCurrencyDetailsSuspenseQuery/getExtraCurrencyDetailsQueryOptions";
+import { Breadcrumbs } from "@/src/common/components/Breadcrumbs/Breadcrumbs.client";
 
 export default async function CryptocurrencyDetailsPage({
   params,
@@ -24,6 +25,7 @@ export default async function CryptocurrencyDetailsPage({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
+      <Breadcrumbs />
       <div className={styles.root}>
         <CriptoDetails ticker={ticker} />
       </div>
