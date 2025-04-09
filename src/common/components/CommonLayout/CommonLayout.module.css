@@ -58,6 +58,10 @@
 }
 
 @media (width <= 390px) {
+  .main {
+    padding: 0 var(--theme-space-4);
+  }
+
   .footer {
     font-size: 12px;
   }

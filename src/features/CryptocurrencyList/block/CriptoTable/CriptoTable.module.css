@@ -30,3 +30,9 @@
     background-color: rgb(255 0 0 / 0%);
   }
 }
+
+@media (width <= 768px) {
+  .root {
+    --ag-cell-horizontal-padding: 8px;
+  }
+}

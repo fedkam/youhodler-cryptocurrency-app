@@ -6,6 +6,7 @@ import { AgGridReact } from "ag-grid-react";
 import cn from "classnames";
 import {
   AllCommunityModule,
+  ColDef,
   ModuleRegistry,
   RowClickedEvent,
 } from "ag-grid-community";
@@ -20,9 +21,10 @@ export function CriptoTable({ rows, cols, className }: CriptoTableProps) {
   const [colDefs] = useState(cols);
   const router = useRouter();
 
-  const defaultColDef = useMemo(() => {
+  const defaultColDef: ColDef<CriptoTableRow> = useMemo(() => {
     return {
       resizable: false,
+      flex: 1,
     };
   }, []);
 
