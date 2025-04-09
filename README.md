@@ -35,3 +35,7 @@ src/
 ├── services/ # API-запросы (REST, GraphQL)
 │
 └── (другие файлы/папки) # Остальное (например, `assets/`, `styles/`)
+
+### Деплой
+
+https://youhodler-cryptocurrency-app.vercel.app/
