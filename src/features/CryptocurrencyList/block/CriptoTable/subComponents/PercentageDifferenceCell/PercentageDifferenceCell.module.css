@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 var(--theme-space-8);
-  font-family: var(--criptotable-font-family);
+  font-family: var(--font-roboto-mono);
   font-size: var(--criptotable-font-size);
   font-weight: var(--criptotable-font-weight);
   color: rgb(200 200 200);
